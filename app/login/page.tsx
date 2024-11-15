@@ -15,7 +15,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>
-          <CardDescription>Masuk ke dalam aplikasi.</CardDescription>
+          <CardDescription>Masuk ke dalam aplikasi .</CardDescription>
         </CardHeader>
         <CardContent>
           <Input type="email" placeholder="Email" />

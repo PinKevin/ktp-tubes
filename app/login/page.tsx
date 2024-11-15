@@ -15,7 +15,7 @@ export default function LoginPage() {
       <Card className="w-full max-w-sm">
         <CardHeader>
           <CardTitle className="text-2xl">Login</CardTitle>
-          <CardDescription>Masuk ke dalam aplikasi .</CardDescription>
+          <CardDescription>Masuk ke dalam aplikasi NEW SIAP UNDIP.</CardDescription>
         </CardHeader>
         <CardContent>
           <Input type="email" placeholder="Email" />
@@ -23,7 +23,7 @@ export default function LoginPage() {
         </CardContent>
         <CardFooter>
           <form action={''} className="w-full">
-            <Button className="w-full">Sign in with GitHub</Button>
+            <Button className="w-full">Sign in</Button>
           </form>
         </CardFooter>
       </Card>

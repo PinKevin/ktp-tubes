@@ -9,7 +9,7 @@ import {
   TableRow,
 } from '@/components/ui/table';
 import { IRS } from '@/models/irs';
-import { Check, X } from 'lucide-react';
+import { Check, X, FileText } from 'lucide-react';
 
 export default function IRSTable({ isVerified, irsList }: { isVerified: boolean; irsList: IRS[] }) {
   return (
@@ -28,16 +28,25 @@ export default function IRSTable({ isVerified, irsList }: { isVerified: boolean;
               <TableHead>Nama</TableHead>
               <TableHead>Semester</TableHead>
               <TableHead>Jumlah SKS</TableHead>
+              <TableHead>File IRS (Semester Sebelumnya)</TableHead>
               <TableHead>Aksi</TableHead>
             </TableRow>
           </TableHeader>
           <TableBody>
             {irsList.map((irsList, index) => (
               <TableRow key={irsList.id}>
-                <TableCell className="font-medium">{index}</TableCell>
+                <TableCell className="font-medium">{index+1}</TableCell>
                 <TableCell>{irsList.mahasiswa_id}</TableCell>
                 <TableCell>{irsList.semester}</TableCell>
                 <TableCell>{irsList.jumlah_sks}</TableCell>
+                <TableCell>
+                  <a href={`/files/pdf/${irsList.berkas_irs}`} download>
+                    <Button variant="outline" size="sm" className="flex items-center gap-2">
+                      <FileText className="w-4 h-4" />
+                      Download PDF
+                    </Button>
+                  </a>
+                </TableCell>
                 <TableCell>
                   <Button variant="outline" size="icon">
                     {isVerified ? <X /> : <Check />}

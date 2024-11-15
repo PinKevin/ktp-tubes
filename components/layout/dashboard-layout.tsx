@@ -14,6 +14,7 @@ import { Sheet, SheetContent, SheetTrigger } from '@/components/ui/sheet';
 import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/components/ui/tooltip';
 import { NavItem } from './nav-item';
 import { NavItemType } from './nav-item-type';
+import { User } from '@/components/layout/user';
 // import { Analytics } from '@vercel/analytics/react';
 // import { User } from './user';
 // import { VercelLogo } from '@/components/icons';
@@ -36,14 +37,14 @@ export default function DashboardLayout({
           <header className="sticky top-0 z-30 flex h-14 items-center gap-4 border-b bg-background px-4 sm:static sm:h-auto sm:border-0 sm:bg-transparent sm:px-6">
             <MobileNav menuList={menuList} />
             <DashboardBreadcrumb />
-            {/* <SearchInput />
-            <User /> */}
+            <div className="ml-auto">
+              <User />
+            </div>
           </header>
           <main className="grid flex-1 items-start gap-2 p-4 sm:px-6 sm:py-0 md:gap-4 bg-muted/40">
             {children}
           </main>
         </div>
-        {/* <Analytics /> */}
       </main>
     </TooltipProvider>
   );

@@ -17,6 +17,6 @@ const menuList: NavItemType[] = [
   },
 ];
 
-export default function LecturerLayout({ children }: { children: React.ReactNode }) {
+export default function StudentLayout({ children }: { children: React.ReactNode }) {
   return <DashboardLayout menuList={menuList}>{children}</DashboardLayout>;
 }

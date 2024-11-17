@@ -9,41 +9,39 @@ import {
 } from '@/components/ui/table';
 import { IRS } from '@/models/irs';
 
-const testIrs: IRS[] = [
-  {
-    id: 1,
-    mahasiswa_id: '240601',
-    jumlah_sks: 20,
-    semester: 1,
-    berkas_irs: 'test',
-    isVerified: false,
-  },
-  {
-    id: 2,
-    mahasiswa_id: '240602',
-    jumlah_sks: 20,
-    semester: 3,
-    berkas_irs: 'test',
-    isVerified: true,
-  },
-  {
-    id: 3,
-    mahasiswa_id: '240603',
-    jumlah_sks: 22,
-    semester: 2,
-    berkas_irs: 'test',
-    isVerified: false,
-  },
-];
+// const testIrs: IRS[] = [
+//   {
+//     id: 1,
+//     mahasiswa_id: '240601',
+//     jumlah_sks: 20,
+//     semester: 1,
+//     berkas_irs: 'test',
+//     isVerified: false,
+//   },
+//   {
+//     id: 2,
+//     mahasiswa_id: '240602',
+//     jumlah_sks: 20,
+//     semester: 3,
+//     berkas_irs: 'test',
+//     isVerified: true,
+//   },
+//   {
+//     id: 3,
+//     mahasiswa_id: '240603',
+//     jumlah_sks: 22,
+//     semester: 2,
+//     berkas_irs: 'test',
+//     isVerified: false,
+//   },
+// ];
 
-export default function IRSTable() {
+export default function IRSTable({ irsList }: { irsList: IRS[] }) {
   return (
     <Card className="w-full">
       <CardHeader>
         <CardTitle>Daftar IRS</CardTitle>
-        <CardDescription>
-          Mahasiswa yang IRS-nya sudah dan belum disetujui
-        </CardDescription>
+        <CardDescription>Mahasiswa yang IRS-nya sudah dan belum disetujui</CardDescription>
       </CardHeader>
       <CardContent>
         <Table className="w-full">
@@ -57,7 +55,7 @@ export default function IRSTable() {
             </TableRow>
           </TableHeader>
           <TableBody>
-            {testIrs.map((irs, index) => (
+            {irsList.map((irs, index) => (
               <TableRow key={irs.id}>
                 <TableCell className="font-medium">{index + 1}</TableCell>
                 <TableCell>{irs.mahasiswa_id}</TableCell>

@@ -30,10 +30,10 @@ export default function TableTabs() {
         <TabsTrigger value="verified">Sudah disetujui</TabsTrigger>
       </TabsList>
       <TabsContent value="notVerified">
-        <IRSTable irsList={testIrs} isVerified={false} />
+        <IRSTable irsList={testIrs} />
       </TabsContent>
       <TabsContent value="verified">
-        <IRSTable irsList={testIrs} isVerified={true} />
+        <IRSTable irsList={testIrs} />
       </TabsContent>
     </Tabs>
   );
